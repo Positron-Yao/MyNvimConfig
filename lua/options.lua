@@ -20,6 +20,15 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
 vim.opt.showmode = false
+vim.opt.list = true
+vim.opt.listchars = {
+  space = "·",      -- 将空格显示为中间点
+  -- 可以同时设置其他不可见字符
+  tab = "> ",       -- 制表符显示为 "> "
+  trail = "-",      -- 行尾空格显示为 "-"
+  extends = ">",    -- 超出屏幕右侧的文本显示为 ">"
+  precedes = "<",   -- 超出屏幕左侧的文本显示为 "<"
+}
 
 -- 搜索设置
 vim.opt.incsearch = true
@@ -33,6 +42,9 @@ vim.opt.backspace = {"indent", "eol", "start"}
 
 -- fittencode
 vim.opt.updatetime = 1000
+
+-- 禁用特殊字符的转义显示
+vim.opt.display:append("uhex")  -- 只在必要时显示十六进制
 
 -- 懒得调的
 vim.cmd([[

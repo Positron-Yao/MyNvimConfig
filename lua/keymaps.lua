@@ -72,6 +72,13 @@ map("n", "<leader>xc", ":w<CR>:MyXMakeArg clean'<CR>", opts)
 map("n", "<leader>xr", ":w<CR>:MyXMakeArg run'<CR>", opts)
 map("n", "<leader>xv", ":w<CR>:MyXMakeArg run ", opts)
 
+-- esp-idf
+map("n", "<leader>eg", ":TermExec cmd='idfget'", opts)
+map("n", "<leader>eb", ":TermExec cmd='idf.py build'", opts)
+map("n", "<leader>ef", ":TermExec cmd='idf.py flash'", opts)
+map("n", "<leader>em", ":TermExec cmd='idf.py monitor'", opts)
+map("n", "<leader>er", ":TermExec cmd='idf.py flash && idf.py monitor'", opts)
+
 -- cargo
 -- 算了其实都用makefile就能解决了()
 -- map("n", "<leader>cr", ":w<CR>:!cargo run<CR>")
@@ -95,6 +102,9 @@ map("v", "<leader>/", ":s/^/", opts)
 map("v", "<leader>d", ":s/^.\\{-}\\s//<CR>", opts)
 
 -- Home End 修复
+-- 修复终端模式
+vim.api.nvim_set_keymap('t', '^[[H', '<Home>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '^[[F', '<End>', {noremap = true, silent = true})
 -- 修复插入模式
 vim.api.nvim_set_keymap('i', '<Find>', '<Home>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('i', '<Select>', '<End>', {noremap = true, silent = true})
