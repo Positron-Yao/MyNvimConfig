@@ -73,11 +73,11 @@ map("n", "<leader>xr", ":w<CR>:MyXMakeArg run'<CR>", opts)
 map("n", "<leader>xv", ":w<CR>:MyXMakeArg run ", opts)
 
 -- esp-idf
-map("n", "<leader>eg", ":TermExec cmd='idfget'", opts)
-map("n", "<leader>eb", ":TermExec cmd='idf.py build'", opts)
-map("n", "<leader>ef", ":TermExec cmd='idf.py flash'", opts)
-map("n", "<leader>em", ":TermExec cmd='idf.py monitor'", opts)
-map("n", "<leader>er", ":TermExec cmd='idf.py flash && idf.py monitor'", opts)
+map("n", "<leader>eg", ":TermExec cmd='idfget'<CR>", opts)
+map("n", "<leader>eb", ":TermExec cmd='idf.py build'<CR>", opts)
+map("n", "<leader>ef", ":TermExec cmd='idf.py flash'<CR>", opts)
+map("n", "<leader>em", ":TermExec cmd='idf.py monitor'<CR>", opts)
+map("n", "<leader>er", ":TermExec cmd='idf.py flash && idf.py monitor'<CR>", opts)
 
 -- cargo
 -- 算了其实都用makefile就能解决了()
