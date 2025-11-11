@@ -1,4 +1,4 @@
-print("Hello Nvim~")
+print("Hello World.")
 
 return {
     cmd = {"echo", "-n"}
