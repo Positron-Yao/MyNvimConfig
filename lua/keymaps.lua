@@ -134,8 +134,8 @@ map("n", "<F2>", ":echo '现在时间是' . strftime('%c') . ' 喵~'<CR>", opts)
 map("n", "<F3>", "i#include <stdio.h><CR><CR>int main(void) {<CR><CR>return 0;<CR>}<CR><Esc>kkk$a<Tab>", opts)
 
 -- 撤回，保存，HJKL
-map({"n", "i"}, "<C-Z>", "<Esc>u")
-map({"n", "i"}, "<C-S>", "<Esc>:w<CR>")
+map({"n", "i", "v"}, "<C-Z>", "<Esc>u")
+map({"n", "i", "v"}, "<C-S>", "<Esc>:w<CR>")
 map("n", "H", "^")
 map("n", "L", "$")
 map("v", "H", "^")
