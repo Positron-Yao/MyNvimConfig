@@ -64,14 +64,6 @@ map("n", "<leader>jb", ":MyJustArg build<CR>", opts)
 map("n", "<leader>jt", ":MyJustArg test<CR>", opts)
 map("n", "<leader>jv", ":MyJustArg run ", opts)
 
--- xmake
-map("n", "<leader>x ", ":MyXMakeArg ", opts)
-map("n", "<leader>x<CR>", ":MyXMakeArg<CR>", opts)
-map("n", "<leader>xb", ":MyXMakeArg build'<CR>", opts)
-map("n", "<leader>xc", ":MyXMakeArg clean'<CR>", opts)
-map("n", "<leader>xr", ":MyXMakeArg run'<CR>", opts)
-map("n", "<leader>xv", ":MyXMakeArg run ", opts)
-
 -- esp-idf
 map("n", "<leader>eg", ":TermExec cmd='idfget'<CR>", opts)
 map("n", "<leader>eb", ":TermExec cmd='idf.py build'<CR>", opts)
@@ -81,8 +73,7 @@ map("n", "<leader>er", ":TermExec cmd='idf.py flash && idf.py monitor'<CR>", opt
 
 -- cargo
 -- 算了其实都用makefile就能解决了()
--- map("n", "<leader>cr", ":w<CR>:!cargo run<CR>")
--- map("n", "<leader>c ", ":w<CR>:!cargo ")
+-- 放到语言自己的配置里面了
 
 -- 调整窗口大小
 map('n', '<C-Up>', ':resize -2<CR>', opts)
@@ -93,6 +84,9 @@ map('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 -- v模式连续调整缩进
 map('v', '<', '<gv', opts)
 map('v', '>', '>gv', opts)
+
+-- 快速;
+map({'n', 'i'}, '<C-;>', '<ESC>A;<ESC>')
 
 -- 更方便的注释
 -- 终端会把/识别为_，为什么呢()
