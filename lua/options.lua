@@ -46,6 +46,34 @@ vim.opt.updatetime = 1000
 -- 禁用特殊字符的转义显示
 vim.opt.display:append("uhex")  -- 只在必要时显示十六进制
 
+-- Scroll Lines
+vim.opt.scrolloff = 8
+-- 有bug()
+-- vim.api.nvim_create_autocmd({ "CursorMoved" }, {
+--   callback = function()
+--     -- 仅在普通缓冲区中生效（排除终端等）
+--     if vim.bo.buftype ~= "" then
+--       return
+--     end
+--
+--     local window_lines = vim.api.nvim_win_get_height(0)
+--     local current_line = vim.fn.line(".")
+--     local last_line = vim.fn.line("$")
+--     local scrolloff_value = vim.o.scrolloff
+--
+--     -- 计算从光标到文件底部理论上需要保留的行数
+--     local margin_bottom = current_line + scrolloff_value - last_line
+--
+--     -- 如果光标距离底部不足 scrolloff 设定的行数
+--     if margin_bottom >= 0 then
+--       -- 先将当前行对齐到窗口底部
+--       vim.api.nvim_input("zb")
+--       -- 再向下滚动额外的行数，以创建留白
+--       vim.api.nvim_input(margin_bottom .. "<C-E>")
+--     end
+--   end,
+-- })
+
 -- 懒得调的
 vim.cmd([[
 colorscheme monokai
@@ -54,7 +82,6 @@ colorscheme monokai
 set wrap
 set linebreak
 set wrapmargin=2
-set scrolloff=10
 
 " 状态
 set laststatus=2

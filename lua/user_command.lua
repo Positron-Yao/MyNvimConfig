@@ -20,5 +20,9 @@ vim.api.nvim_create_user_command("MyCargoArg", function(input)
 end, {nargs = '?', desc = 'Run cargo command in the terminal'})
 
 vim.api.nvim_create_user_command("XmakeCompileCommands", function(input)
-    vim.cmd(string.format("!xmake project -k compile_commands"))
+    vim.cmd("!xmake project -k compile_commands")
 end, {nargs = '?', desc = 'Generate compile_commands.json'})
+
+vim.api.nvim_create_user_command("Commaconv", function(input)
+    vim.cmd("%s/，/, /g")
+end, {nargs = '?', desc = 'Convert fw-comma to hw-comma '})
